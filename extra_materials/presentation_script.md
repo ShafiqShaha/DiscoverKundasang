@@ -22,17 +22,13 @@ Use this script as a word-for-word guide when recording your presentation video.
 
 ---
 
-### **Segment 2: Public Website Tour & Persistent Audio Player (1:00 - 2:45)**
+### **Segment 2: Public Website Tour & Dynamic Layouts (1:00 - 2:45)**
 * **🎬 [ACTION]**: Open your browser at `http://localhost:8080/discoverkundasang/`. Refresh the page to show the preloader and the clean layout.
 * **🗣️ [SPOKEN]**:
-  > *"Here is the homepage of **Discover Kundasang**. When we load the website, we are greeted by a custom preloader that fades out to reveal the landing section. As we scroll down, we see the 'About Kundasang' section, featuring a fixed background image parallax effect, a dark forest-green overlay, and glassmorphic card details.*
-  > *In the footer, you can see a floating lofi music player. To comply with browser security rules, it remains fully muted by default when the site loads, showing a volume-off icon so the user is not surprised by sudden sound."*
-* **🎬 [ACTION]**: Click the music toggle button in the footer. The icon changes to a volume-on symbol, a pulse animation begins, and the lofi track plays.
+  > *"Here is the homepage of **Discover Kundasang**. When we load the website, we are greeted by a custom preloader that fades out to reveal the landing section. As we scroll down, we see the 'About Kundasang' section, featuring a fixed background image parallax effect, a dark forest-green overlay, and glassmorphic card details. Let's see this in action as we visit the **Gallery** page."*
+* **🎬 [ACTION]**: Click on the **Gallery** link in the navbar. The page transitions with a smooth fade.
 * **🗣️ [SPOKEN]**:
-  > *"As soon as I click the button, the player unmutes and plays. More importantly, this audio player uses client-side state tracking. Using JavaScript `localStorage`, it continuously saves the play/pause state and the exact playback timestamp. If I navigate to another page, the music continues playing seamlessly from the exact second it left off. Let's see this in action as we visit the **Gallery** page."*
-* **🎬 [ACTION]**: Click on the **Gallery** link in the navbar. The page transitions with a smooth fade, and the lofi audio continues playing smoothly.
-* **🗣️ [SPOKEN]**:
-  > *"As you can hear, the music transitions between pages without interrupting the user. In the **Gallery** page, we have exactly **eight high-quality images** representing Kundasang landmarks, styled with hover title effects. Let's check the **Activities** page."*
+  > *"In the **Gallery** page, we have exactly **eight high-quality images** representing Kundasang landmarks, styled with hover title effects. Let's check the **Activities** page."*
 * **🎬 [ACTION]**: Click on **Activities** in the navbar.
 * **🗣️ [SPOKEN]**:
   > *"The **Activities** page showcases **four main attractions** using an alternating glassmorphic card layout. Let's visit the **Accommodation** page."*
@@ -42,7 +38,7 @@ Use this script as a word-for-word guide when recording your presentation video.
 * **🎬 [ACTION]**: Click the **More Info** button for Umea Glam Kundasang to show it opening a new tab, then close it and return to the app. Navigate to the **Developer** page.
 * **🗣️ [SPOKEN]**:
   > *"On the **Developer** page, I have detailed my student profile, course details, and links to my professional profiles. Throughout the entire public site, the navigation bar remains fully consistent and responsive."*
-* **🎯 [RUBRIC TRIGGER]**: Highlights the **UI/UX & Navigation (15%)** and **Content & Gallery (15%)** criteria, specifically proving you met the exact count requirements (8 gallery images, 4 activities, 4 rooms, consistent navbar, and developer page) alongside custom state-tracking features.
+* **🎯 [RUBRIC TRIGGER]**: Highlights the **UI/UX & Navigation (15%)** and **Content & Gallery (15%)** criteria, specifically proving you met the exact count requirements (8 gallery images, 4 activities, 4 rooms, consistent navbar, and developer page).
 
 ---
 
