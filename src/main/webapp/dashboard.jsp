@@ -375,25 +375,25 @@
         cursor: not-allowed !important;
     }
 
-    .dataTables_wrapper .dataTables_filter input {
-        border: 1.5px solid rgba(255, 255, 255, 0.3) !important; /* Brighter border */
+    .custom-search-input {
+        border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
         border-radius: 2rem !important;
-        padding: 0.6rem 1.4rem !important;
-        margin-left: 0.5em !important;
+        padding: 0.6rem 1.4rem 0.6rem 2.8rem !important;
         outline: none !important;
         font-family: inherit;
         font-size: 0.9rem !important;
-        background-color: rgba(255, 255, 255, 0.12) !important; /* Brighter background */
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        width: 250px;
-        color: #ffffff !important; /* Force solid white text */
+        background-color: rgba(255, 255, 255, 0.12) !important;
+        width: 260px;
+        color: #ffffff !important;
         box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
-    }
-    .dataTables_wrapper .dataTables_filter input::placeholder {
-        color: rgba(255, 255, 255, 0.65) !important; /* Highly visible placeholder */
+        transition: all 0.3s ease;
     }
 
-    .dataTables_wrapper .dataTables_filter input:focus {
+    .custom-search-input::placeholder {
+        color: rgba(255, 255, 255, 0.65) !important;
+    }
+
+    .custom-search-input:focus {
         border-color: #d2e3c8 !important;
         background-color: rgba(255, 255, 255, 0.1) !important;
         box-shadow: 0 0 0 4px rgba(210, 227, 200, 0.18), inset 0 2px 4px rgba(0,0,0,0.05) !important;
@@ -731,12 +731,15 @@
 
     <!-- Contact Submissions Table -->
     <div class="dashboard-content">
-        <div class="content-title">
+        <div class="content-title" style="flex-wrap: wrap; gap: 15px;">
             <h3>
                 <i data-feather="list"></i>
-                Visitor Inquiries (Data Table)
+                Visitor Inquiries
             </h3>
-
+            <div class="custom-search-wrapper" style="position: relative; display: inline-block;">
+                <i data-feather="search" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: rgba(255,255,255,0.65);"></i>
+                <input type="text" id="customSearchInput" class="custom-search-input" placeholder="Search inquiries...">
+            </div>
         </div>
 
         <div class="table-container">
@@ -880,14 +883,20 @@
     }
 
     $(document).ready(      function() {
-        $('#inquiriesTable').DataTable({
+        const table = $('#inquiriesTable').DataTable({
             "order": [[ 0, "desc" ]],
             "pageLength": 5,
             "lengthMenu": [5, 10, 25, 50],
+            "dom": 'lrtip',
             "language": {
                 "searchPlaceholder": "Search inquiries...",
                 "search": ""
             }
+        });
+
+        // Custom search box handler
+        $('#customSearchInput').on('keyup', function() {
+            table.search(this.value).draw();
         });
 
         // Event delegation for dynamically paging table rows
