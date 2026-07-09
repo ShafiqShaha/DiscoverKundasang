@@ -99,19 +99,18 @@ Use this script as a word-for-word guide when recording your presentation video.
 * **🎬 [ACTION]**: Click the **Reply** button next to Adam Haris's record. The reply modal pops up.
 * **🗣️ [SPOKEN]**:
   > *"This launches a custom glassmorphic modal containing the visitor's details and message. I will type our official suggestions in the text area."*
-* **🎬 [ACTION]**: Type a short reply (e.g., `Hello Adam, yes! Hiking slots are limited. We suggest booking at least 3-6 months in advance through Sutera Sanctuary Operators.`). Click **Save & Email**.
+* **🎬 [ACTION]**: Type a short reply (e.g., `Hello Adam, yes! Hiking slots are limited. We suggest booking at least 3-6 months in advance through Sutera Sanctuary Operators.`). Click **Save Suggestion**.
 * **🗣️ [SPOKEN]**:
-  > *"When I click Save & Email, the system performs two actions. First, it submits a POST request to **DashboardServlet** which updates the database with our reply text and timestamp. Second, it triggers a secure `mailto:` command that opens the default local email client pre-populated with the visitor's email address, subject line, and our complete suggestion body. This makes sending the reply instant and seamless."*
-* **🎬 [ACTION]**: Show the email client or the mail tab, then return to the dashboard. The table will refresh, and Adam Haris's row will now display a green **Replied** badge and a **View** button.
-* **🗣️ [SPOKEN]**:
-  > *"As we return to the dashboard, Adam's row has transitioned to a green **Replied** status. If I click the **View** button..."*
+  > *"When I click Save Suggestion, the form submits a POST request directly to our J2EE controller, **DashboardServlet**. The servlet processes the form data and updates the inquiry row in MySQL with our reply text and a timestamp.*
+  >
+  > *Upon successful update, the page redirects back to the dashboard, and as you can see, Adam's status has now transitioned to a green **Replied** badge. The system now replaces the reply button with a **View** button."*
 * **🎬 [ACTION]**: Click the **View** button on Adam Haris's row. The read-only view modal pops up.
 * **🗣️ [SPOKEN]**:
   > *"...it opens a read-only modal displaying our saved suggestion and the exact reply timestamp. Let's log out to securely end our session."*
 * **🎬 [ACTION]**: Click the **Logout** button.
 * **🗣️ [SPOKEN]**:
   > *"Logging out invalidates the session, locking the servlet routes again."*
-* **🎯 [RUBRIC TRIGGER]**: Highlights **Admin Dashboard (20%)** and **Security & Sessions (20%)**. Proves advanced DataTable custom styling, interactive modal dialog flows, mail client integration, and status state persistence.
+* **🎯 [RUBRIC TRIGGER]**: Highlights **Admin Dashboard (20%)** and **Security & Sessions (20%)**. Proves advanced DataTable custom styling, interactive modal dialog flows, and status state persistence.
 
 ---
 

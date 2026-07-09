@@ -855,19 +855,6 @@
         document.getElementById("replyModal").classList.remove("active");
     }
     
-    function handleReplySubmit(event) {
-        const email = document.getElementById("modalToEmail").innerText;
-        const name = document.getElementById("modalToName").innerText;
-        const replyText = document.getElementById("modalReplyText").value;
-        
-        const subject = "Discover Kundasang Support Team - Reply to your inquiry";
-        const body = "Hi " + name + ",\n\nThank you for reaching out to us.\n\nHere is our suggestion/reply to your inquiry:\n\"" + replyText + "\"\n\nPlease let us know if you need further assistance!\n\nWarm regards,\nDiscover Kundasang Admin Team";
-        
-        const mailtoUri = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-        
-        window.open(mailtoUri, '_blank');
-    }
-    
     // View Reply Modal Controls
     function openViewReplyModal(name, msg, reply, time) {
         document.getElementById("viewModalName").innerText = name;
@@ -937,7 +924,7 @@
             <p id="modalVisitorMsg"></p>
         </div>
         
-        <form action="DashboardServlet" method="POST" onsubmit="handleReplySubmit(event)">
+        <form action="DashboardServlet" method="POST">
             <input type="hidden" name="action" value="reply">
             <input type="hidden" name="id" id="modalInquiryId">
             
@@ -947,7 +934,7 @@
             <div class="modal-actions">
                 <button type="button" class="btn-cancel" onclick="closeReplyModal()">Cancel</button>
                 <button type="submit" class="btn-submit">
-                    <i data-feather="send"></i> Save &amp; Email
+                    <i data-feather="check"></i> Save Suggestion
                 </button>
             </div>
         </form>
