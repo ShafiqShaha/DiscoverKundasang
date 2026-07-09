@@ -253,8 +253,8 @@
     /* Column-specific width allocations */
     table.dataTable tbody td:nth-child(1),
     table.dataTable thead th:nth-child(1) { /* Date & Time */
-        width: 140px !important;
         white-space: nowrap !important;
+        width: 140px;
     }
 
     table.dataTable tbody td:nth-child(2),
@@ -265,41 +265,42 @@
     table.dataTable tbody td:nth-child(3),
     table.dataTable thead th:nth-child(3) { /* Contact Number */
         white-space: nowrap !important;
-        width: 120px !important;
+        width: 125px;
     }
 
     table.dataTable tbody td:nth-child(4),
     table.dataTable thead th:nth-child(4) { /* Gender */
-        width: 70px !important;
+        width: 70px;
         text-align: center !important;
     }
 
     table.dataTable tbody td:nth-child(5),
     table.dataTable thead th:nth-child(5) { /* Email */
-        word-break: break-all;
+        min-width: 165px;
+        word-wrap: break-word !important;
     }
 
     table.dataTable tbody td:nth-child(6),
     table.dataTable thead th:nth-child(6) { /* Source Channel */
         white-space: nowrap !important;
-        width: 130px !important;
+        width: 120px;
     }
 
     table.dataTable tbody td:nth-child(7),
     table.dataTable thead th:nth-child(7) { /* Message */
-        min-width: 250px;
+        min-width: 240px;
         line-height: 1.5;
     }
 
     table.dataTable tbody td:nth-child(8),
     table.dataTable thead th:nth-child(8) { /* Status */
-        width: 80px !important;
+        width: 75px;
         text-align: center !important;
     }
 
     table.dataTable tbody td:nth-child(9),
     table.dataTable thead th:nth-child(9) { /* Action */
-        width: 90px !important;
+        width: 85px;
         text-align: center !important;
         white-space: nowrap !important;
     }
