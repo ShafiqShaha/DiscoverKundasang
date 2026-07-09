@@ -85,7 +85,7 @@ public class DashboardServlet extends HttpServlet {
             Map<String, String> mock1 = new HashMap<>();
             mock1.put("id", "1");
             mock1.put("name", "Alif Daniel");
-            mock1.put("contact_number", "+6012-3456789");
+            mock1.put("contact_number", "+6012-000-0001");
             mock1.put("gender", "Male");
             mock1.put("email", "alif.daniel@gmail.com");
             mock1.put("source", "Social Media");
@@ -98,7 +98,7 @@ public class DashboardServlet extends HttpServlet {
             Map<String, String> mock2 = new HashMap<>();
             mock2.put("id", "2");
             mock2.put("name", "Siti Aminah");
-            mock2.put("contact_number", "+6019-8765432");
+            mock2.put("contact_number", "+6012-000-0002");
             mock2.put("gender", "Female");
             mock2.put("email", "siti.aminah@gmail.com");
             mock2.put("source", "Search Engine");
@@ -111,7 +111,7 @@ public class DashboardServlet extends HttpServlet {
             Map<String, String> mock3 = new HashMap<>();
             mock3.put("id", "3");
             mock3.put("name", "Johnathan Doe");
-            mock3.put("contact_number", "+6011-2345678");
+            mock3.put("contact_number", "+6012-000-0003");
             mock3.put("gender", "Male");
             mock3.put("email", "john.doe@gmail.com");
             mock3.put("source", "Friend or Family");
@@ -124,7 +124,7 @@ public class DashboardServlet extends HttpServlet {
             Map<String, String> mock4 = new HashMap<>();
             mock4.put("id", "4");
             mock4.put("name", "Raziq Ramli");
-            mock4.put("contact_number", "+6013-4567890");
+            mock4.put("contact_number", "+6012-000-0004");
             mock4.put("gender", "Prefer not to say");
             mock4.put("email", "raziq.ramli@gmail.com");
             mock4.put("source", "Newspaper or Magazine");
@@ -137,7 +137,7 @@ public class DashboardServlet extends HttpServlet {
             Map<String, String> mock5 = new HashMap<>();
             mock5.put("id", "5");
             mock5.put("name", "Farhan Nordin");
-            mock5.put("contact_number", "+6014-9871234");
+            mock5.put("contact_number", "+6012-000-0005");
             mock5.put("gender", "Male");
             mock5.put("email", "farhan.nordin@gmail.com");
             mock5.put("source", "Social Media");
@@ -150,7 +150,7 @@ public class DashboardServlet extends HttpServlet {
             Map<String, String> mock6 = new HashMap<>();
             mock6.put("id", "6");
             mock6.put("name", "Jessica Wong");
-            mock6.put("contact_number", "+6017-3344556");
+            mock6.put("contact_number", "+6012-000-0006");
             mock6.put("gender", "Female");
             mock6.put("email", "jessica.wong@gmail.com");
             mock6.put("source", "Search Engine");
@@ -163,7 +163,7 @@ public class DashboardServlet extends HttpServlet {
             Map<String, String> mock7 = new HashMap<>();
             mock7.put("id", "7");
             mock7.put("name", "Muhammad Syahmi");
-            mock7.put("contact_number", "+6018-8765431");
+            mock7.put("contact_number", "+6012-000-0007");
             mock7.put("gender", "Male");
             mock7.put("email", "syahmi.yusof@gmail.com");
             mock7.put("source", "Friend or Family");
@@ -176,7 +176,7 @@ public class DashboardServlet extends HttpServlet {
             Map<String, String> mock8 = new HashMap<>();
             mock8.put("id", "8");
             mock8.put("name", "Nurul Aishah");
-            mock8.put("contact_number", "+6016-5544332");
+            mock8.put("contact_number", "+6012-000-0008");
             mock8.put("gender", "Female");
             mock8.put("email", "nurulaishah@gmail.com");
             mock8.put("source", "Newspaper or Magazine");
@@ -189,7 +189,7 @@ public class DashboardServlet extends HttpServlet {
             Map<String, String> mock9 = new HashMap<>();
             mock9.put("id", "9");
             mock9.put("name", "Logesh Kumar");
-            mock9.put("contact_number", "+6015-9988776");
+            mock9.put("contact_number", "+6012-000-0009");
             mock9.put("gender", "Male");
             mock9.put("email", "logesh.kumar@gmail.com");
             mock9.put("source", "Social Media");
