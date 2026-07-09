@@ -40,15 +40,20 @@ public class DashboardServlet extends HttpServlet {
         try {
             conn = DBConnection.getConnection();
 
-            // Auto-check and alter schema on the fly if reply columns are missing
+            // Auto-check and alter schema on the fly if reply columns are missing using metadata to prevent table locks
             try {
-                PreparedStatement checkPs = conn.prepareStatement("SELECT reply_message FROM inquiries LIMIT 1");
-                checkPs.executeQuery().close();
-                checkPs.close();
+                java.sql.DatabaseMetaData dbm = conn.getMetaData();
+                ResultSet cols = dbm.getColumns(null, null, "inquiries", "reply_message");
+                boolean colExists = cols.next();
+                cols.close();
+                
+                if (!colExists) {
+                    Statement alterStmt = conn.createStatement();
+                    alterStmt.executeUpdate("ALTER TABLE inquiries ADD COLUMN reply_message TEXT NULL, ADD COLUMN replied_at TIMESTAMP NULL");
+                    alterStmt.close();
+                }
             } catch (Exception alterCheck) {
-                Statement alterStmt = conn.createStatement();
-                alterStmt.executeUpdate("ALTER TABLE inquiries ADD COLUMN reply_message TEXT NULL, ADD COLUMN replied_at TIMESTAMP NULL");
-                alterStmt.close();
+                alterCheck.printStackTrace();
             }
 
             String sql = "SELECT * FROM inquiries ORDER BY created_at DESC";
