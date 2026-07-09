@@ -46,11 +46,12 @@
             height: 100% !important;
             background-color: #111e12 !important; /* Deep forest green */
             z-index: 999999 !important;
-            clip-path: circle(150% at 50% 50%) !important;
-            transition: clip-path 0.8s cubic-bezier(0.76, 0, 0.24, 1), visibility 0.8s !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            transition: opacity 0.4s ease, visibility 0.4s !important;
         }
         #page-loader.fade-out {
-            clip-path: circle(0% at 50% 50%) !important;
+            opacity: 0 !important;
             visibility: hidden !important;
             pointer-events: none !important;
         }
