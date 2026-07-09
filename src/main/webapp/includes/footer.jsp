@@ -67,7 +67,7 @@
 
     if (isPublicPageForMusic) {
 %>
-    <!-- Floating Lofi Music Player -->
+    <!-- Background Music Player -->
     <div class="music-player-container">
         <audio id="bg-music" src="audio/lofi.mp3" loop></audio>
         <button id="music-toggle" class="music-btn" title="Toggle Background Music">
@@ -86,7 +86,7 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: rgba(17, 30, 18, 0.75); /* Dark forest green translucent */
+            background: rgba(17, 30, 18, 0.75);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 2px solid rgba(210, 227, 200, 0.4);
@@ -111,7 +111,7 @@
             pointer-events: none;
         }
         
-        /* Floating wave animation when playing */
+        /* Animation when playing */
         .music-btn.playing {
             animation: musicPulseWave 2s infinite;
         }
@@ -134,10 +134,10 @@
             const btn = document.getElementById("music-toggle");
             const icon = document.getElementById("music-icon");
 
-            // Volume control (soft background lofi, not loud)
+            // Set volume
             audio.volume = 0.35;
 
-            // Load saved music state from localStorage
+            // Load saved state
             const savedState = localStorage.getItem("musicPlaying");
             const savedTime = localStorage.getItem("musicTime");
 
@@ -145,26 +145,26 @@
                 audio.currentTime = parseFloat(savedTime);
             }
 
-            // Sync UI state on load
+            // Sync UI state
             if (savedState === "true") {
                 btn.classList.add("playing");
                 icon.setAttribute("data-feather", "volume-2");
                 if (window.feather) feather.replace();
                 
-                // Autoplay block bypass: Try to play when user clicks anywhere on the page
+                // Play on user click to bypass autoplay block
                 const startPlaying = () => {
                     audio.play().then(() => {
                         document.removeEventListener("click", startPlaying);
                     }).catch(e => {
-                        console.log("Autoplay blocked by browser, waiting for user click.");
+                        console.log("Autoplay blocked, waiting for click.");
                     });
                 };
                 document.addEventListener("click", startPlaying);
             }
 
-            // Toggle play / pause
+            // Play / Pause toggle
             btn.addEventListener("click", function(e) {
-                e.stopPropagation(); // prevent document click trigger
+                e.stopPropagation();
                 if (audio.paused) {
                     audio.play().then(() => {
                         btn.classList.add("playing");
@@ -181,7 +181,7 @@
                 }
             });
 
-            // Save playback time periodically
+            // Save playback time
             audio.addEventListener("timeupdate", function() {
                 if (!audio.paused) {
                     localStorage.setItem("musicTime", audio.currentTime);

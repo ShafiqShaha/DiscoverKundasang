@@ -85,7 +85,7 @@
 </section>
 
 <style>
-    /* Cinematic About Section */
+    /* About Section Styles */
     .about {
         background-image: linear-gradient(rgba(17, 30, 18, 0.82), rgba(17, 30, 18, 0.92)), url("img/gallery/ranaukali.jpg");
         background-attachment: fixed;
@@ -178,7 +178,7 @@
     }
 
     .about-feature-card {
-        background: rgba(255, 255, 255, 0.08); /* glassmorphic translucent white */
+        background: rgba(255, 255, 255, 0.08); /* card background */
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         border: 1px solid rgba(255, 255, 255, 0.15);

@@ -210,7 +210,7 @@
         color: var(--white) !important;
     }
 
-    /* Style the default sorting arrows to match our green theme */
+    /* Custom sorting arrows */
     table.dataTable thead th.sorting::before,
     table.dataTable thead th.sorting_asc::before,
     table.dataTable thead th.sorting_desc::before,
@@ -273,7 +273,7 @@
         border-radius: 0 4px 4px 0;
     }
 
-    /* Custom DataTables Style Override to Match Site Theme */
+    /* DataTable overrides */
     .dataTables_wrapper .dataTables_paginate {
         margin-top: 20px !important;
         padding-top: 15px !important;

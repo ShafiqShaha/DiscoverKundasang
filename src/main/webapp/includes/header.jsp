@@ -44,7 +44,7 @@
             left: 0 !important;
             width: 100% !important;
             height: 100% !important;
-            background-color: #111e12 !important; /* Deep forest green */
+            background-color: #111e12 !important;
             z-index: 999999 !important;
             opacity: 1 !important;
             visibility: visible !important;
@@ -56,7 +56,7 @@
             pointer-events: none !important;
         }
     </style>
-    <!-- Simple Fast Page Transition Overlay -->
+    <!-- Page Loader -->
     <div id="page-loader"></div>
 <% } %>
 
