@@ -300,7 +300,7 @@
                         <span class="price-value">RM 288</span>
                         <span class="price-label">per night</span>
                     </div>
-                    <a href="contact.jsp?resort=mountain-valley" class="book-btn">Book Now</a>
+                    <a href="https://www.booking.com/hotel/my/mountain-valley-resort.html" target="_blank" rel="noopener noreferrer" class="book-btn">More Info</a>
                 </div>
             </div>
         </div>
@@ -340,7 +340,7 @@
                         <span class="price-value">RM 120</span>
                         <span class="price-label">per night</span>
                     </div>
-                    <a href="contact.jsp?resort=bayu-senja" class="book-btn">Book Now</a>
+                    <a href="https://www.booking.com/hotel/my/bayu-senja-lodge.html" target="_blank" rel="noopener noreferrer" class="book-btn">More Info</a>
                 </div>
             </div>
         </div>
@@ -380,7 +380,7 @@
                         <span class="price-value">RM 290</span>
                         <span class="price-label">per night</span>
                     </div>
-                    <a href="contact.jsp?resort=umea-glamping" class="book-btn">Book Now</a>
+                    <a href="https://umeaglam-kundasang.com/" target="_blank" rel="noopener noreferrer" class="book-btn">More Info</a>
                 </div>
             </div>
         </div>
@@ -420,7 +420,7 @@
                         <span class="price-value">RM 1,240</span>
                         <span class="price-label">per night</span>
                     </div>
-                    <a href="contact.jsp?resort=sutera-sanctuary" class="book-btn">Book Now</a>
+                    <a href="https://suterasanctuarylodges.com.my/" target="_blank" rel="noopener noreferrer" class="book-btn">More Info</a>
                 </div>
             </div>
         </div>
