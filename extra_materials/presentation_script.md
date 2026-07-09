@@ -11,13 +11,13 @@ Use this script as a word-for-word guide when recording your presentation video.
 ---
 
 ### **Segment 1: Introduction & Project Scope (0:00 - 1:00)**
-* **🎬 [ACTION]**: Display your presentation cover slide showing: Course Code (CSC584), Student Name (Shafiq Shaharuddin), Student ID (2023618226), Class (NBCS2306A), and Project Title (Discover Kundasang).
+* **🎬 [ACTION]**: Start the recording with your web browser open directly to the **Developer Profile** page (`http://localhost:8080/discoverkundasang/developer.jsp`) showing your name (Shafiq Shaharuddin), Student ID (2023618226), Class (NBCS2306A), and course credentials clearly on the screen.
 * **🗣️ [SPOKEN]**: 
-  > *"Good day to my lecturer. Today, I am excited to present my web application project titled **Discover Kundasang**. This system was developed as part of the individual assignment for Web Development using the standard Java EE model, consisting of Java Servlets, JSP pages, and a MySQL database.*
+  > *"Good day to my lecturer. Today, I am excited to present a live demonstration of my J2EE web application project, **Discover Kundasang**. This system is built using Java Servlets, dynamic JSP pages, and a MySQL database backend.*
   >
-  > *The primary objective of this project is to build an interactive, highly responsive tourism portal for Kundasang, Sabah. It features modern UI/UX design, offline lofi background audio tracking, and a secure admin dashboard where administrators can view, search, and directly reply to customer inquiries.*
+  > *Instead of slides, I will be conducting a direct, live walkthrough of the functional application and its codebase. As shown on my developer profile page, my name is Shafiq Shaharuddin, student ID 2023618226, class NBCS2306A.*
   >
-  > *Let's begin the system walk-through starting with the public portal."*
+  > *Let's begin by looking at the public portal homepage."*
 * **🎯 [RUBRIC TRIGGER]**: Shows clear objectives, project scope, and professional presentation structure.
 
 ---
