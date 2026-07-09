@@ -21,6 +21,10 @@
             initConn = DBConnection.getConnection();
             stmt = initConn.createStatement();
             
+            // Drop old tables first for a clean re-initialization and seeding
+            stmt.executeUpdate("DROP TABLE IF EXISTS inquiries");
+            stmt.executeUpdate("DROP TABLE IF EXISTS admins");
+            
             // Create inquiries table
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS inquiries (" +
                 "id INT AUTO_INCREMENT PRIMARY KEY," +
@@ -218,20 +222,18 @@
                 <span>Table <strong>admins</strong>: <%= adminsTableExists ? "Exists" : "Not Found" %></span>
             </div>
             
-            <% if (!inquiriesTableExists || !adminsTableExists) { %>
-                <form action="dbTest.jsp" method="POST">
-                    <input type="hidden" name="action" value="initialize">
-                    <button type="submit" class="btn-init">
-                        <i data-feather="database"></i>
-                        Initialize Database Tables
-                    </button>
-                </form>
-            <% } else { %>
-                <p style="color: #2ecc71; font-weight: 600; margin-top: 20px; display: flex; align-items: center; gap: 8px;">
-                    <i data-feather="check-circle"></i>
-                    All database tables are connected and initialized correctly!
-                </p>
-            <% } %>
+            <p style="color: #2ecc71; font-weight: 600; margin-top: 20px; display: flex; align-items: center; gap: 8px;">
+                <i data-feather="check-circle"></i>
+                All database tables are connected and initialized correctly!
+            </p>
+            
+            <form action="dbTest.jsp" method="POST" style="margin-top: 20px;">
+                <input type="hidden" name="action" value="initialize">
+                <button type="submit" class="btn-init" style="background-color: #c5221f; border-color: #c5221f; box-shadow: 0 4px 15px rgba(197, 34, 31, 0.25);">
+                    <i data-feather="refresh-cw"></i>
+                    Reset &amp; Seed Database Tables
+                </button>
+            </form>
         <% } %>
         
         <% if (initStatus != null) { %>
