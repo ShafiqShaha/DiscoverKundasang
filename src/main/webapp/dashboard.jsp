@@ -801,9 +801,9 @@
         const replyText = document.getElementById("modalReplyText").value;
         
         const subject = "Discover Kundasang Support Team - Reply to your inquiry";
-        const body = `Hi ${name},\n\nThank you for reaching out to us.\n\nHere is our suggestion/reply to your inquiry:\n"${replyText}"\n\nPlease let us know if you need further assistance!\n\nWarm regards,\nDiscover Kundasang Admin Team`;
+        const body = "Hi " + name + ",\n\nThank you for reaching out to us.\n\nHere is our suggestion/reply to your inquiry:\n\"" + replyText + "\"\n\nPlease let us know if you need further assistance!\n\nWarm regards,\nDiscover Kundasang Admin Team";
         
-        const mailtoUri = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const mailtoUri = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
         
         window.open(mailtoUri, '_blank');
     }
