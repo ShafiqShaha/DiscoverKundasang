@@ -20,18 +20,18 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        color: var(--primary);
+        color: #d2e3c8;
         font-weight: 600;
         font-size: 1rem;
         transition: 0.3s;
-        border: 2px solid var(--primary);
+        border: 2px solid #d2e3c8;
         padding: 0.6rem 1.2rem;
         border-radius: 0.5rem;
     }
 
     .map-link:hover {
-        background-color: var(--primary);
-        color: white;
+        background-color: #d2e3c8;
+        color: #111e12;
     }
 
     .map-link i {
@@ -82,7 +82,7 @@
         <!-- Google Map Embedding (Kundasang, Sabah, Malaysia) -->
         <div style="flex: 1 1 45rem; display: flex; flex-direction: column;">
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.288764027415!2d116.5747164749649!3d5.987504994017697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x323b37c355555555%3A0x6d8b671a5c68f76e!2sKundasang%20War%20Memorial!5e0!3m2!1sen!2smy!4v1720000000000!5m2!1sen!2smy"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63507.82885910486!2d116.52988358249826!3d6.002246736207865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x323b374bc73c4ec5%3A0x8670df5ea947bb3f!2sKundasang%2C%20Sabah!5e0!3m2!1sen!2smy!4v1720000000000!5m2!1sen!2smy"
                 class="map"
                 style="border:0; border-radius: 1rem 1rem 0 0;"
                 allowfullscreen=""
@@ -91,7 +91,7 @@
             </iframe>
             
             <div class="map-link-container">
-                <a href="https://maps.google.com/?q=Kundasang+War+Memorial" target="_blank" class="map-link">
+                <a href="https://maps.google.com/?q=Kundasang,+Sabah" target="_blank" class="map-link">
                     <i data-feather="external-link"></i>
                     View on Google Maps (New Tab)
                 </a>
