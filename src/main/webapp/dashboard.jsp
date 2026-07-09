@@ -770,7 +770,7 @@
                         String replyMsg = inquiry.get("reply_message");
                         boolean isReplied = replyMsg != null && !replyMsg.trim().isEmpty();
 
-                        // Null-safe strings for attributes
+                        // prevent null values from breaking JSP
                         String inqId = inquiry.get("id");
                         if (inqId == null) inqId = "";
 
@@ -894,12 +894,12 @@
             }
         });
 
-        // Custom search box handler
+        // custom search box query filter
         $('#customSearchInput').on('keyup', function() {
             table.search(this.value).draw();
         });
 
-        // Event delegation for dynamically paging table rows
+        // click handlers for reply and view buttons
         $('#inquiriesTable').on('click', '.reply-btn', function() {
             const btn = $(this);
             openReplyModal(

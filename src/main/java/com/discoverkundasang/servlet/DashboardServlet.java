@@ -40,13 +40,13 @@ public class DashboardServlet extends HttpServlet {
         try {
             conn = DBConnection.getConnection();
 
-            // Ensure reply columns exist by running a safe ALTER TABLE (ignoring if they already exist)
+            // add columns if they don't exist in the database yet
             try {
                 Statement alterStmt = conn.createStatement();
                 alterStmt.executeUpdate("ALTER TABLE inquiries ADD COLUMN reply_message TEXT NULL, ADD COLUMN replied_at TIMESTAMP NULL");
                 alterStmt.close();
             } catch (Exception ignore) {
-                // Columns already exist or table doesn't exist yet
+                // columns already exist
             }
 
             String sql = "SELECT * FROM inquiries ORDER BY created_at DESC";
@@ -80,7 +80,7 @@ public class DashboardServlet extends HttpServlet {
             if (conn != null) try { conn.close(); } catch (Exception e) {}
         }
 
-        // Populate with premium demo inquiries ONLY if database is empty AND no connection error occurred
+        // load dummy mock data if DB is empty and no connection error
         if (dbInquiries.isEmpty() && connectionError == null) {
             Map<String, String> mock1 = new HashMap<>();
             mock1.put("id", "1");
