@@ -87,7 +87,10 @@
 <style>
     /* Cinematic About Section */
     .about {
-        background: linear-gradient(180deg, var(--bg) 0%, #edf4ec 100%);
+        background-image: linear-gradient(rgba(17, 30, 18, 0.82), rgba(17, 30, 18, 0.92)), url("img/gallery/ranaukali.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
         position: relative;
         overflow: hidden;
         padding: 100px 7% 100px;
@@ -97,11 +100,11 @@
         text-align: center;
         font-size: 3rem;
         margin-bottom: 50px;
-        color: var(--text);
+        color: var(--white);
     }
 
     .about h2 span {
-        color: var(--primary);
+        color: #d2e3c8;
     }
 
     .about .row {
@@ -115,8 +118,8 @@
         position: relative;
         border-radius: 2rem;
         overflow: hidden;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-        border: 1px solid rgba(0,0,0,0.03);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .about-img-wrapper::after {
@@ -153,7 +156,7 @@
 
     .about .content h3 {
         font-size: 2.2rem;
-        color: var(--text);
+        color: var(--white);
         font-weight: 700;
         margin-bottom: 20px;
         letter-spacing: -0.5px;
@@ -163,7 +166,7 @@
     .about .content p {
         font-size: 1.05rem;
         line-height: 1.8;
-        color: #555;
+        color: #e2e8f0;
         margin-bottom: 20px;
     }
 
@@ -175,33 +178,36 @@
     }
 
     .about-feature-card {
-        background: var(--white);
+        background: rgba(255, 255, 255, 0.08); /* glassmorphic translucent white */
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
         border-radius: 1.2rem;
-        border: 1px solid rgba(0,0,0,0.02);
         padding: 12px 15px;
         display: flex;
         align-items: center;
         gap: 12px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .about-feature-card:hover {
         transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(79, 111, 82, 0.1);
+        box-shadow: 0 15px 30px rgba(79, 111, 82, 0.2);
     }
 
     .about-icon {
         width: 48px;
         height: 48px;
         border-radius: 1rem;
-        background: var(--accent);
+        background: rgba(255, 255, 255, 0.1);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--primary);
+        color: #d2e3c8;
         flex-shrink: 0;
         box-shadow: 0 4px 10px rgba(79, 111, 82, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .about-icon i {
@@ -212,7 +218,7 @@
     .about-info h4 {
         font-size: 1rem;
         font-weight: 700;
-        color: var(--text);
+        color: var(--white);
         margin: 0 0 2px 0;
     }
 
@@ -220,7 +226,7 @@
         font-size: 0.85rem !important;
         margin: 0 !important;
         line-height: 1.4 !important;
-        color: #666 !important;
+        color: #ccd7cc !important;
     }
 
     @media (max-width: 992px) {
