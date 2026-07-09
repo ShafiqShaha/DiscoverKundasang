@@ -709,15 +709,38 @@
                         
                         String replyMsg = inquiry.get("reply_message");
                         boolean isReplied = replyMsg != null && !replyMsg.trim().isEmpty();
+
+                        // Null-safe strings for attributes
+                        String inqId = inquiry.get("id");
+                        if (inqId == null) inqId = "";
+
+                        String inqName = inquiry.get("name");
+                        if (inqName == null) inqName = "";
+                        String escapedName = inqName.replace("\"", "&quot;").replace("'", "\\'");
+
+                        String inqEmail = inquiry.get("email");
+                        if (inqEmail == null) inqEmail = "";
+
+                        String inqMsg = inquiry.get("message");
+                        if (inqMsg == null) inqMsg = "";
+                        String escapedMsg = inqMsg.replace("\"", "&quot;").replace("'", "\\'").replace("\n", " ").replace("\r", " ");
+
+                        String escapedReply = "";
+                        if (isReplied) {
+                            escapedReply = replyMsg.replace("\"", "&quot;").replace("'", "\\'").replace("\n", " ").replace("\r", " ");
+                        }
+                        
+                        String repTime = inquiry.get("replied_at");
+                        if (repTime == null) repTime = "";
                     %>
                         <tr>
-                            <td><%= inquiry.get("created_at") %></td>
-                            <td><strong><%= inquiry.get("name") %></strong></td>
-                            <td><%= inquiry.get("contact_number") %></td>
-                            <td><%= inquiry.get("gender") %></td>
-                            <td><a href="mailto:<%= inquiry.get("email") %>" style="color: #d2e3c8; text-decoration: underline; text-underline-offset: 4px;"><%= inquiry.get("email") %></a></td>
-                            <td><span class="tag <%= srcClass %>"><%= source %></span></td>
-                            <td><%= inquiry.get("message") %></td>
+                            <td><%= inquiry.get("created_at") != null ? inquiry.get("created_at") : "-" %></td>
+                            <td><strong><%= inqName %></strong></td>
+                            <td><%= inquiry.get("contact_number") != null ? inquiry.get("contact_number") : "-" %></td>
+                            <td><%= inquiry.get("gender") != null ? inquiry.get("gender") : "-" %></td>
+                            <td><a href="mailto:<%= inqEmail %>" style="color: #d2e3c8; text-decoration: underline; text-underline-offset: 4px;"><%= inqEmail %></a></td>
+                            <td><span class="tag <%= srcClass %>"><%= source != null ? source : "-" %></span></td>
+                            <td><%= inqMsg %></td>
                             <td>
                                 <% if (isReplied) { %>
                                     <span class="tag tag-replied">Replied</span>
@@ -729,18 +752,18 @@
                                 <div class="btn-row">
                                     <% if (isReplied) { %>
                                         <button class="action-btn view-reply-btn" 
-                                                data-name="<%= inquiry.get("name") %>" 
-                                                data-msg="<%= inquiry.get("message").replace("\"", "&quot;").replace("'", "\\'") %>" 
-                                                data-reply="<%= replyMsg.replace("\"", "&quot;").replace("'", "\\'") %>" 
-                                                data-time="<%= inquiry.get("replied_at") %>">
+                                                data-name="<%= escapedName %>" 
+                                                data-msg="<%= escapedMsg %>" 
+                                                data-reply="<%= escapedReply %>" 
+                                                data-time="<%= repTime %>">
                                             <i data-feather="eye"></i> View
                                         </button>
                                     <% } else { %>
                                         <button class="action-btn reply-btn" 
-                                                data-id="<%= inquiry.get("id") %>" 
-                                                data-name="<%= inquiry.get("name") %>" 
-                                                data-email="<%= inquiry.get("email") %>" 
-                                                data-msg="<%= inquiry.get("message").replace("\"", "&quot;").replace("'", "\\'") %>">
+                                                data-id="<%= inqId %>" 
+                                                data-name="<%= escapedName %>" 
+                                                data-email="<%= inqEmail %>" 
+                                                data-msg="<%= escapedMsg %>">
                                             <i data-feather="corner-up-left"></i> Reply
                                         </button>
                                     <% } %>
