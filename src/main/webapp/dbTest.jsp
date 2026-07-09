@@ -47,6 +47,25 @@
                 "VALUES ('admin', 'admin123') " +
                 "ON DUPLICATE KEY UPDATE username=username");
                 
+            // Seed inquiries table if it is currently empty
+            ResultSet checkRs = stmt.executeQuery("SELECT COUNT(*) FROM inquiries");
+            checkRs.next();
+            int count = checkRs.getInt(1);
+            checkRs.close();
+            
+            if (count == 0) {
+                stmt.executeUpdate("INSERT INTO inquiries (name, contact_number, gender, email, source, message, reply_message, replied_at, created_at) VALUES " +
+                    "('Alif Daniel', '+6012-3456789', 'Male', 'alif.daniel@gmail.com', 'Social Media', 'Hello, I want to book the Mountain Pine Resort from July 10th to 12th. Is it available?', NULL, NULL, '2026-07-04 10:00:00')," +
+                    "('Siti Aminah', '+6019-8765432', 'Female', 'siti.aminah@gmail.com', 'Search Engine', 'What is the best time to see Mount Kinabalu without cloud cover? Thank you.', 'We highly recommend visiting early in the morning between 6:00 AM and 8:30 AM for the clearest views of the peak. Clouds usually form by mid-morning!', '2026-07-03 16:00:00', '2026-07-03 14:30:00')," +
+                    "('Johnathan Doe', '+6011-2345678', 'Male', 'john.doe@gmail.com', 'Friend or Family', 'Awesome website! The gallery photos of Kundasang are absolutely breathtaking.', NULL, NULL, '2026-07-01 09:15:00')," +
+                    "('Raziq Ramli', '+6013-4567890', 'Prefer not to say', 'raziq.ramli@gmail.com', 'Newspaper or Magazine', 'Do you offer customizable tour guide packages for groups of 10 people?', NULL, NULL, '2026-06-28 17:45:00')," +
+                    "('Farhan Nordin', '+6014-9871234', 'Male', 'farhan.nordin@gmail.com', 'Social Media', 'Is there any public transport from Kota Kinabalu to Kundasang? Or do we need to hire a car?', 'We strongly recommend renting a car or hiring a private driver. Public transport options to Kundasang are very limited and not flexible.', '2026-06-25 14:00:00', '2026-06-25 11:30:00')," +
+                    "('Jessica Wong', '+6017-3344556', 'Female', 'jessica.wong@gmail.com', 'Search Engine', 'Are the walking trails around Desa Dairy Farm wheelchair accessible? Planning to bring my grandparents.', NULL, NULL, '2026-06-22 09:00:00')," +
+                    "('Muhammad Syahmi', '+6018-8765431', 'Male', 'syahmi.yusof@gmail.com', 'Friend or Family', 'What is the entrance fee for the Kundasang War Memorial? Do we need to book tickets online?', 'The ticket fee is RM4 for Malaysian adults and RM10 for international visitors. You can purchase them directly at the entrance counter.', '2026-06-20 16:30:00', '2026-06-20 15:20:00')," +
+                    "('Nurul Aishah', '+6016-5544332', 'Female', 'nurulaishah@gmail.com', 'Newspaper or Magazine', 'Is it possible to view Mount Kinabalu clearly from the Umea Glam stay?', NULL, NULL, '2026-06-18 08:45:00')," +
+                    "('Logesh Kumar', '+6015-9988776', 'Male', 'logesh.kumar@gmail.com', 'Social Media', 'Do we need warm clothing for a stay in Kundasang during July? What is the average night temperature?', NULL, NULL, '2026-06-15 19:10:00')");
+            }
+                
             initStatus = "Database tables initialized successfully!";
         } catch (Exception e) {
             initStatus = "Failed to initialize tables: " + e.getMessage();
