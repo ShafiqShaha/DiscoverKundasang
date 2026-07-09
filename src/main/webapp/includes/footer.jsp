@@ -147,19 +147,21 @@
 
             // Sync UI state
             if (savedState === "true") {
-                btn.classList.add("playing");
-                icon.setAttribute("data-feather", "volume-2");
+                audio.play().then(() => {
+                    btn.classList.add("playing");
+                    icon.setAttribute("data-feather", "volume-2");
+                    if (window.feather) feather.replace();
+                }).catch(e => {
+                    // Browser blocked autoplay, default to muted state
+                    btn.classList.remove("playing");
+                    icon.setAttribute("data-feather", "volume-x");
+                    localStorage.setItem("musicPlaying", "false");
+                    if (window.feather) feather.replace();
+                });
+            } else {
+                btn.classList.remove("playing");
+                icon.setAttribute("data-feather", "volume-x");
                 if (window.feather) feather.replace();
-                
-                // Play on user click to bypass autoplay block
-                const startPlaying = () => {
-                    audio.play().then(() => {
-                        document.removeEventListener("click", startPlaying);
-                    }).catch(e => {
-                        console.log("Autoplay blocked, waiting for click.");
-                    });
-                };
-                document.addEventListener("click", startPlaying);
             }
 
             // Play / Pause toggle
