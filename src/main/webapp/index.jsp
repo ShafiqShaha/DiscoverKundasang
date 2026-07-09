@@ -154,19 +154,19 @@
         justify-content: center;
     }
 
-    .about .content h3 {
+    .about .row .content h3 {
         font-size: 2.2rem;
-        color: var(--white);
+        color: #ffffff !important;
         font-weight: 700;
         margin-bottom: 20px;
         letter-spacing: -0.5px;
         line-height: 1.3;
     }
 
-    .about .content p {
+    .about .row .content p {
         font-size: 1.05rem;
         line-height: 1.8;
-        color: #e2e8f0;
+        color: #e2e8f0 !important;
         margin-bottom: 20px;
     }
 
