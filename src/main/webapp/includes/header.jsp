@@ -28,6 +28,38 @@
 
 <body>
 
+<% 
+    boolean isPublicSubPage = "Gallery".equals(pageTitle) || 
+                              "Activities".equals(pageTitle) || 
+                              "Accommodations".equals(pageTitle) || 
+                              "Contact".equals(pageTitle) || 
+                              "Developer Profile".equals(pageTitle);
+    
+    if (isPublicSubPage) {
+%>
+    <style>
+        #page-loader {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background-color: #111e12 !important; /* Deep forest green */
+            z-index: 999999 !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            transition: opacity 0.4s ease, visibility 0.4s !important;
+        }
+        #page-loader.fade-out {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+        }
+    </style>
+    <!-- Simple Fast Page Transition Overlay -->
+    <div id="page-loader"></div>
+<% } %>
+
 <!-- ==========================================
                 NAVIGATION BAR
 =========================================== -->

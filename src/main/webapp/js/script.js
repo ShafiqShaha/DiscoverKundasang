@@ -28,14 +28,22 @@ if (menuToggle && navbarNav) {
 // ========================================
 function initPreloader() {
   const preloader = document.getElementById("preloader");
+  const pageLoader = document.getElementById("page-loader");
+  
   if (preloader) {
     // Elegant fade out after a brief dramatic loading progress (1.2s)
     setTimeout(() => {
       preloader.classList.add("fade-out");
       document.body.classList.add("loaded");
     }, 1200);
+  } else if (pageLoader) {
+    // Fast, simple transition for other public pages (350ms delay)
+    setTimeout(() => {
+      pageLoader.classList.add("fade-out");
+      document.body.classList.add("loaded");
+    }, 350);
   } else {
-    // Immediate activation for other pages
+    // Immediate activation for other pages (like admin pages)
     document.body.classList.add("loaded");
   }
 }
