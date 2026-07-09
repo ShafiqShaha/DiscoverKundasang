@@ -87,7 +87,7 @@ public class DashboardServlet extends HttpServlet {
             mock1.put("name", "Alif Daniel");
             mock1.put("contact_number", "+6012-3456789");
             mock1.put("gender", "Male");
-            mock1.put("email", "alif@example.com");
+            mock1.put("email", "alif.daniel@gmail.com");
             mock1.put("source", "Social Media");
             mock1.put("message", "Hello, I want to book the Mountain Pine Resort from July 10th to 12th. Is it available?");
             mock1.put("created_at", "2026-07-04 10:00:00");
@@ -100,7 +100,7 @@ public class DashboardServlet extends HttpServlet {
             mock2.put("name", "Siti Aminah");
             mock2.put("contact_number", "+6019-8765432");
             mock2.put("gender", "Female");
-            mock2.put("email", "siti@example.com");
+            mock2.put("email", "siti.aminah@gmail.com");
             mock2.put("source", "Search Engine");
             mock2.put("message", "What is the best time to see Mount Kinabalu without cloud cover? Thank you.");
             mock2.put("created_at", "2026-07-03 14:30:00");
@@ -113,7 +113,7 @@ public class DashboardServlet extends HttpServlet {
             mock3.put("name", "Johnathan Doe");
             mock3.put("contact_number", "+6011-2345678");
             mock3.put("gender", "Male");
-            mock3.put("email", "john@example.com");
+            mock3.put("email", "john.doe@gmail.com");
             mock3.put("source", "Friend or Family");
             mock3.put("message", "Awesome website! The gallery photos of Kundasang are absolutely breathtaking.");
             mock3.put("created_at", "2026-07-01 09:15:00");
@@ -126,13 +126,78 @@ public class DashboardServlet extends HttpServlet {
             mock4.put("name", "Raziq Ramli");
             mock4.put("contact_number", "+6013-4567890");
             mock4.put("gender", "Prefer not to say");
-            mock4.put("email", "raziq@example.com");
+            mock4.put("email", "raziq.ramli@gmail.com");
             mock4.put("source", "Newspaper or Magazine");
             mock4.put("message", "Do you offer customizable tour guide packages for groups of 10 people?");
             mock4.put("created_at", "2026-06-28 17:45:00");
             mock4.put("reply_message", null);
             mock4.put("replied_at", null);
             dbInquiries.add(mock4);
+
+            Map<String, String> mock5 = new HashMap<>();
+            mock5.put("id", "5");
+            mock5.put("name", "Farhan Nordin");
+            mock5.put("contact_number", "+6014-9871234");
+            mock5.put("gender", "Male");
+            mock5.put("email", "farhan.nordin@gmail.com");
+            mock5.put("source", "Social Media");
+            mock5.put("message", "Is there any public transport from Kota Kinabalu to Kundasang? Or do we need to hire a car?");
+            mock5.put("created_at", "2026-06-25 11:30:00");
+            mock5.put("reply_message", "We strongly recommend renting a car or hiring a private driver. Public transport options to Kundasang are very limited and not flexible.");
+            mock5.put("replied_at", "2026-06-25 14:00:00");
+            dbInquiries.add(mock5);
+
+            Map<String, String> mock6 = new HashMap<>();
+            mock6.put("id", "6");
+            mock6.put("name", "Jessica Wong");
+            mock6.put("contact_number", "+6017-3344556");
+            mock6.put("gender", "Female");
+            mock6.put("email", "jessica.wong@gmail.com");
+            mock6.put("source", "Search Engine");
+            mock6.put("message", "Are the walking trails around Desa Dairy Farm wheelchair accessible? Planning to bring my grandparents.");
+            mock6.put("created_at", "2026-06-22 09:00:00");
+            mock6.put("reply_message", null);
+            mock6.put("replied_at", null);
+            dbInquiries.add(mock6);
+
+            Map<String, String> mock7 = new HashMap<>();
+            mock7.put("id", "7");
+            mock7.put("name", "Muhammad Syahmi");
+            mock7.put("contact_number", "+6018-8765431");
+            mock7.put("gender", "Male");
+            mock7.put("email", "syahmi.yusof@gmail.com");
+            mock7.put("source", "Friend or Family");
+            mock7.put("message", "What is the entrance fee for the Kundasang War Memorial? Do we need to book tickets online?");
+            mock7.put("created_at", "2026-06-20 15:20:00");
+            mock7.put("reply_message", "The ticket fee is RM4 for Malaysian adults and RM10 for international visitors. You can purchase them directly at the entrance counter.");
+            mock7.put("replied_at", "2026-06-20 16:30:00");
+            dbInquiries.add(mock7);
+
+            Map<String, String> mock8 = new HashMap<>();
+            mock8.put("id", "8");
+            mock8.put("name", "Nurul Aishah");
+            mock8.put("contact_number", "+6016-5544332");
+            mock8.put("gender", "Female");
+            mock8.put("email", "nurulaishah@gmail.com");
+            mock8.put("source", "Newspaper or Magazine");
+            mock8.put("message", "Is it possible to view Mount Kinabalu clearly from the Umea Glam stay?");
+            mock8.put("created_at", "2026-06-18 08:45:00");
+            mock8.put("reply_message", null);
+            mock8.put("replied_at", null);
+            dbInquiries.add(mock8);
+
+            Map<String, String> mock9 = new HashMap<>();
+            mock9.put("id", "9");
+            mock9.put("name", "Logesh Kumar");
+            mock9.put("contact_number", "+6015-9988776");
+            mock9.put("gender", "Male");
+            mock9.put("email", "logesh.kumar@gmail.com");
+            mock9.put("source", "Social Media");
+            mock9.put("message", "Do we need warm clothing for a stay in Kundasang during July? What is the average night temperature?");
+            mock9.put("created_at", "2026-06-15 19:10:00");
+            mock9.put("reply_message", null);
+            mock9.put("replied_at", null);
+            dbInquiries.add(mock9);
         }
 
         request.setAttribute("inquiries", dbInquiries);
