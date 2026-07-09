@@ -31,7 +31,7 @@
     /* Dashboard Page Styles */
     /* Dashboard Page Styles */
     .dashboard-container {
-        padding: 140px 7% 80px;
+        padding: 140px 3% 80px;
         min-height: 100vh;
         background-image: linear-gradient(rgba(14, 23, 15, 0.88), rgba(20, 28, 21, 0.94)), url("img/gallery/gallery1-new.jpg?v=3");
         background-attachment: fixed;
@@ -246,6 +246,23 @@
         color: #e2e8f0 !important;
         vertical-align: middle !important;
         background-color: transparent !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+    }
+
+    /* Column-specific width allocations */
+    table.dataTable tbody td:nth-child(2) { /* Name */
+        min-width: 120px;
+    }
+
+    table.dataTable tbody td:nth-child(5) { /* Email */
+        word-break: break-all;
+    }
+
+    table.dataTable tbody td:nth-child(7) { /* Message */
+        min-width: 260px;
+        max-width: 450px;
+        line-height: 1.6;
     }
 
     table.dataTable tbody td:first-child {
