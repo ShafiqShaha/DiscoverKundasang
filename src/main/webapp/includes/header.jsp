@@ -46,11 +46,11 @@
             height: 100% !important;
             background-color: #111e12 !important; /* Deep forest green */
             z-index: 999999 !important;
-            transform: translateY(0) !important;
-            transition: transform 0.5s cubic-bezier(0.85, 0, 0.15, 1), visibility 0.5s !important;
+            transform: translateX(0) !important;
+            transition: transform 0.6s cubic-bezier(0.85, 0, 0.15, 1), visibility 0.6s !important;
         }
         #page-loader.fade-out {
-            transform: translateY(-100%) !important;
+            transform: translateX(-100%) !important;
             visibility: hidden !important;
             pointer-events: none !important;
         }

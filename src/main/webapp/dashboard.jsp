@@ -283,11 +283,11 @@
         border-radius: 0.5rem !important;
         padding: 0.55rem 1.1rem !important;
         margin: 0 4px !important;
-        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        border: 1px solid rgba(255, 255, 255, 0.25) !important;
         background: rgba(255, 255, 255, 0.05) !important;
-        color: #e2e8f0 !important;
+        color: #ffffff !important; /* Force pure white for readable text */
         font-size: 0.85rem !important;
-        font-weight: 550 !important;
+        font-weight: 600 !important;
         transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
@@ -311,26 +311,29 @@
     .dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
     .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover {
         background: rgba(255, 255, 255, 0.02) !important;
-        color: rgba(255, 255, 255, 0.2) !important;
-        border-color: rgba(255, 255, 255, 0.05) !important;
+        color: rgba(255, 255, 255, 0.55) !important; /* Brightened from 0.2 to 0.55 for high contrast */
+        border-color: rgba(255, 255, 255, 0.08) !important;
         box-shadow: none;
         transform: none;
         cursor: not-allowed !important;
     }
 
     .dataTables_wrapper .dataTables_filter input {
-        border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+        border: 1.5px solid rgba(255, 255, 255, 0.3) !important; /* Brighter border */
         border-radius: 2rem !important;
         padding: 0.6rem 1.4rem !important;
         margin-left: 0.5em !important;
         outline: none !important;
         font-family: inherit;
         font-size: 0.9rem !important;
-        background-color: rgba(255, 255, 255, 0.05) !important;
+        background-color: rgba(255, 255, 255, 0.12) !important; /* Brighter background */
         transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         width: 250px;
-        color: var(--white) !important;
-        box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        color: #ffffff !important; /* Force solid white text */
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
+    }
+    .dataTables_wrapper .dataTables_filter input::placeholder {
+        color: rgba(255, 255, 255, 0.65) !important; /* Highly visible placeholder */
     }
 
     .dataTables_wrapper .dataTables_filter input:focus {
