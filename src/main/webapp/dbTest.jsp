@@ -30,6 +30,8 @@
                 "email VARCHAR(100) NOT NULL," +
                 "source VARCHAR(50) NOT NULL," +
                 "message TEXT NOT NULL," +
+                "reply_message TEXT NULL," +
+                "replied_at TIMESTAMP NULL," +
                 "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
                 ")");
                 

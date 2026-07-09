@@ -427,6 +427,173 @@
             font-size: 2rem;
         }
     }
+
+    .tag-replied {
+        background-color: rgba(46, 204, 113, 0.2) !important;
+        color: #2ecc71 !important;
+        border: 1px solid rgba(46, 204, 113, 0.3) !important;
+    }
+    .tag-pending {
+        background-color: rgba(241, 196, 15, 0.2) !important;
+        color: #f1c40f !important;
+        border: 1px solid rgba(241, 196, 15, 0.3) !important;
+    }
+    .action-btn {
+        padding: 6px 12px;
+        border-radius: 6px;
+        border: 1px solid rgba(255,255,255,0.15);
+        background: rgba(255,255,255,0.06);
+        color: var(--white) !important;
+        cursor: pointer;
+        font-size: 0.82rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+    .action-btn:hover {
+        background: #d2e3c8;
+        color: #111e12 !important;
+        border-color: #d2e3c8;
+        transform: translateY(-1px);
+    }
+    .action-btn i {
+        width: 14px;
+        height: 14px;
+    }
+    .btn-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    /* Modal Styling */
+    .reply-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.65);
+        z-index: 100000;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+    .reply-modal.active {
+        display: flex;
+    }
+    .reply-modal-content {
+        background: rgba(17, 30, 18, 0.98);
+        border: 2px solid rgba(210, 227, 200, 0.35);
+        border-radius: 1.5rem;
+        width: 90%;
+        max-width: 550px;
+        padding: 30px;
+        color: var(--white);
+        box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+        position: relative;
+        animation: modalSlideIn 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    @keyframes modalSlideIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .close-modal-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: transparent;
+        border: none;
+        color: #d2e3c8;
+        font-size: 1.6rem;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+    .close-modal-btn:hover {
+        color: var(--white);
+    }
+    .reply-modal-content h3 {
+        font-size: 1.45rem;
+        margin-bottom: 20px;
+        color: #d2e3c8 !important;
+        border-bottom: 1px solid rgba(255,255,255,0.12);
+        padding-bottom: 12px;
+    }
+    .modal-field {
+        margin-bottom: 16px;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        background: rgba(255,255,255,0.03);
+        padding: 12px;
+        border-radius: 0.8rem;
+        border: 1px solid rgba(255,255,255,0.05);
+    }
+    .modal-field strong {
+        color: #d2e3c8;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+    .modal-field p {
+        color: #e2e8f0;
+        font-size: 0.9rem;
+    }
+    .reply-textarea {
+        width: 100%;
+        height: 130px;
+        background: rgba(255,255,255,0.06);
+        border: 1.5px solid rgba(255,255,255,0.18);
+        border-radius: 0.8rem;
+        padding: 12px;
+        color: var(--white);
+        font-family: inherit;
+        font-size: 0.92rem;
+        outline: none;
+        resize: none;
+        transition: border-color 0.3s;
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .reply-textarea:focus {
+        border-color: #d2e3c8;
+    }
+    .modal-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        margin-top: 20px;
+    }
+    .btn-cancel {
+        padding: 0.7rem 1.4rem;
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.15);
+        color: var(--white);
+        border-radius: 0.5rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    .btn-cancel:hover {
+        background: rgba(255,255,255,0.15);
+    }
+    .btn-submit {
+        padding: 0.7rem 1.4rem;
+        background: var(--primary);
+        border: none;
+        color: var(--white);
+        border-radius: 0.5rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: background 0.2s;
+    }
+    .btn-submit:hover {
+        background: var(--secondary);
+    }
 </style>
 
 <div class="dashboard-container">
@@ -526,6 +693,8 @@
                         <th>Email</th>
                         <th>Source Channel</th>
                         <th>Message</th>
+                        <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -537,6 +706,9 @@
                             else if (source.contains("Search")) srcClass = "tag-green";
                             else if (source.contains("Friend")) srcClass = "tag-orange";
                         }
+                        
+                        String replyMsg = inquiry.get("reply_message");
+                        boolean isReplied = replyMsg != null && !replyMsg.trim().isEmpty();
                     %>
                         <tr>
                             <td><%= inquiry.get("created_at") %></td>
@@ -546,6 +718,34 @@
                             <td><a href="mailto:<%= inquiry.get("email") %>" style="color: #d2e3c8; text-decoration: underline; text-underline-offset: 4px;"><%= inquiry.get("email") %></a></td>
                             <td><span class="tag <%= srcClass %>"><%= source %></span></td>
                             <td><%= inquiry.get("message") %></td>
+                            <td>
+                                <% if (isReplied) { %>
+                                    <span class="tag tag-replied">Replied</span>
+                                <% } else { %>
+                                    <span class="tag tag-pending">Pending</span>
+                                <% } %>
+                            </td>
+                            <td>
+                                <div class="btn-row">
+                                    <% if (isReplied) { %>
+                                        <button class="action-btn view-reply-btn" 
+                                                data-name="<%= inquiry.get("name") %>" 
+                                                data-msg="<%= inquiry.get("message").replace("\"", "&quot;").replace("'", "\\'") %>" 
+                                                data-reply="<%= replyMsg.replace("\"", "&quot;").replace("'", "\\'") %>" 
+                                                data-time="<%= inquiry.get("replied_at") %>">
+                                            <i data-feather="eye"></i> View
+                                        </button>
+                                    <% } else { %>
+                                        <button class="action-btn reply-btn" 
+                                                data-id="<%= inquiry.get("id") %>" 
+                                                data-name="<%= inquiry.get("name") %>" 
+                                                data-email="<%= inquiry.get("email") %>" 
+                                                data-msg="<%= inquiry.get("message").replace("\"", "&quot;").replace("'", "\\'") %>">
+                                            <i data-feather="corner-up-left"></i> Reply
+                                        </button>
+                                    <% } %>
+                                </div>
+                            </td>
                         </tr>
                     <% } %>
                 </tbody>
@@ -557,7 +757,49 @@
 
 <!-- Initialize jQuery DataTable -->
 <script>
-    $(document).ready(function() {
+    // Reply Modal Controls
+    function openReplyModal(id, name, email, msg) {
+        document.getElementById("modalInquiryId").value = id;
+        document.getElementById("modalToName").innerText = name;
+        document.getElementById("modalToEmail").innerText = email;
+        document.getElementById("modalVisitorMsg").innerText = msg;
+        document.getElementById("modalReplyText").value = "";
+        
+        document.getElementById("replyModal").classList.add("active");
+    }
+    
+    function closeReplyModal() {
+        document.getElementById("replyModal").classList.remove("active");
+    }
+    
+    function handleReplySubmit(event) {
+        const email = document.getElementById("modalToEmail").innerText;
+        const name = document.getElementById("modalToName").innerText;
+        const replyText = document.getElementById("modalReplyText").value;
+        
+        const subject = "Discover Kundasang Support Team - Reply to your inquiry";
+        const body = `Hi ${name},\n\nThank you for reaching out to us.\n\nHere is our suggestion/reply to your inquiry:\n"${replyText}"\n\nPlease let us know if you need further assistance!\n\nWarm regards,\nDiscover Kundasang Admin Team`;
+        
+        const mailtoUri = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        window.open(mailtoUri, '_blank');
+    }
+    
+    // View Reply Modal Controls
+    function openViewReplyModal(name, msg, reply, time) {
+        document.getElementById("viewModalName").innerText = name;
+        document.getElementById("viewModalMsg").innerText = msg;
+        document.getElementById("viewModalReply").innerText = reply;
+        document.getElementById("viewModalTime").innerText = time;
+        
+        document.getElementById("viewReplyModal").classList.add("active");
+    }
+    
+    function closeViewReplyModal() {
+        document.getElementById("viewReplyModal").classList.remove("active");
+    }
+
+    $(document).ready(      function() {
         $('#inquiriesTable').DataTable({
             "order": [[ 0, "desc" ]],
             "pageLength": 5,
@@ -567,7 +809,86 @@
                 "search": ""
             }
         });
+
+        // Event delegation for dynamically paging table rows
+        $('#inquiriesTable').on('click', '.reply-btn', function() {
+            const btn = $(this);
+            openReplyModal(
+                btn.attr('data-id'),
+                btn.attr('data-name'),
+                btn.attr('data-email'),
+                btn.attr('data-msg')
+            );
+        });
+
+        $('#inquiriesTable').on('click', '.view-reply-btn', function() {
+            const btn = $(this);
+            openViewReplyModal(
+                btn.attr('data-name'),
+                btn.attr('data-msg'),
+                btn.attr('data-reply'),
+                btn.attr('data-time')
+            );
+        });
     });
 </script>
+
+<!-- Modal for replying to inquiries -->
+<div id="replyModal" class="reply-modal">
+    <div class="reply-modal-content">
+        <button class="close-modal-btn" onclick="closeReplyModal()">&times;</button>
+        <h3>Send Suggestion / Reply</h3>
+        
+        <div class="modal-field">
+            <strong>To:</strong> <span id="modalToName"></span> (<span id="modalToEmail"></span>)
+        </div>
+        
+        <div class="modal-field">
+            <strong>Visitor Message:</strong>
+            <p id="modalVisitorMsg"></p>
+        </div>
+        
+        <form action="DashboardServlet" method="POST" onsubmit="handleReplySubmit(event)">
+            <input type="hidden" name="action" value="reply">
+            <input type="hidden" name="id" id="modalInquiryId">
+            
+            <label style="font-weight: 600; display: block; margin-bottom: 8px; font-size: 0.95rem; color: #d2e3c8;">Your Suggestion / Reply:</label>
+            <textarea name="replyMessage" id="modalReplyText" class="reply-textarea" placeholder="Type your advice, suggestion, or answer here..." required></textarea>
+            
+            <div class="modal-actions">
+                <button type="button" class="btn-cancel" onclick="closeReplyModal()">Cancel</button>
+                <button type="submit" class="btn-submit">
+                    <i data-feather="send"></i> Save &amp; Email
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal for viewing sent replies -->
+<div id="viewReplyModal" class="reply-modal">
+    <div class="reply-modal-content">
+        <button class="close-modal-btn" onclick="closeViewReplyModal()">&times;</button>
+        <h3>Sent Suggestion / Reply</h3>
+        
+        <div class="modal-field">
+            <strong>Visitor:</strong> <span id="viewModalName"></span>
+        </div>
+        
+        <div class="modal-field">
+            <strong>Visitor Message:</strong>
+            <p id="viewModalMsg"></p>
+        </div>
+        
+        <div class="modal-field" style="border-left: 3px solid #2ecc71; background: rgba(46, 204, 113, 0.05);">
+            <strong>Your Suggestion (Replied at <span id="viewModalTime"></span>):</strong>
+            <p id="viewModalReply"></p>
+        </div>
+        
+        <div class="modal-actions">
+            <button type="button" class="btn-submit" onclick="closeViewReplyModal()">Close</button>
+        </div>
+    </div>
+</div>
 
 <%@ include file="includes/footer.jsp" %>

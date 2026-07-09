@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -38,6 +39,18 @@ public class DashboardServlet extends HttpServlet {
         
         try {
             conn = DBConnection.getConnection();
+
+            // Auto-check and alter schema on the fly if reply columns are missing
+            try {
+                PreparedStatement checkPs = conn.prepareStatement("SELECT reply_message FROM inquiries LIMIT 1");
+                checkPs.executeQuery().close();
+                checkPs.close();
+            } catch (Exception alterCheck) {
+                Statement alterStmt = conn.createStatement();
+                alterStmt.executeUpdate("ALTER TABLE inquiries ADD COLUMN reply_message TEXT NULL, ADD COLUMN replied_at TIMESTAMP NULL");
+                alterStmt.close();
+            }
+
             String sql = "SELECT * FROM inquiries ORDER BY created_at DESC";
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
@@ -50,9 +63,13 @@ public class DashboardServlet extends HttpServlet {
                 row.put("email", rs.getString("email"));
                 row.put("source", rs.getString("source"));
                 row.put("message", rs.getString("message"));
+                row.put("reply_message", rs.getString("reply_message"));
                 
                 java.sql.Timestamp ts = rs.getTimestamp("created_at");
                 row.put("created_at", ts != null ? ts.toString().substring(0, 19) : "-");
+
+                java.sql.Timestamp repTs = rs.getTimestamp("replied_at");
+                row.put("replied_at", repTs != null ? repTs.toString().substring(0, 19) : null);
                 
                 dbInquiries.add(row);
             }
@@ -76,6 +93,8 @@ public class DashboardServlet extends HttpServlet {
             mock1.put("source", "Social Media");
             mock1.put("message", "Hello, I want to book the Mountain Pine Resort from July 10th to 12th. Is it available?");
             mock1.put("created_at", "2026-07-04 10:00:00");
+            mock1.put("reply_message", null);
+            mock1.put("replied_at", null);
             dbInquiries.add(mock1);
 
             Map<String, String> mock2 = new HashMap<>();
@@ -87,6 +106,8 @@ public class DashboardServlet extends HttpServlet {
             mock2.put("source", "Search Engine");
             mock2.put("message", "What is the best time to see Mount Kinabalu without cloud cover? Thank you.");
             mock2.put("created_at", "2026-07-03 14:30:00");
+            mock2.put("reply_message", "We highly recommend visiting early in the morning between 6:00 AM and 8:30 AM for the clearest views of the peak. Clouds usually form by mid-morning!");
+            mock2.put("replied_at", "2026-07-03 16:00:00");
             dbInquiries.add(mock2);
 
             Map<String, String> mock3 = new HashMap<>();
@@ -98,6 +119,8 @@ public class DashboardServlet extends HttpServlet {
             mock3.put("source", "Friend or Family");
             mock3.put("message", "Awesome website! The gallery photos of Kundasang are absolutely breathtaking.");
             mock3.put("created_at", "2026-07-01 09:15:00");
+            mock3.put("reply_message", null);
+            mock3.put("replied_at", null);
             dbInquiries.add(mock3);
 
             Map<String, String> mock4 = new HashMap<>();
@@ -109,6 +132,8 @@ public class DashboardServlet extends HttpServlet {
             mock4.put("source", "Newspaper or Magazine");
             mock4.put("message", "Do you offer customizable tour guide packages for groups of 10 people?");
             mock4.put("created_at", "2026-06-28 17:45:00");
+            mock4.put("reply_message", null);
+            mock4.put("replied_at", null);
             dbInquiries.add(mock4);
         }
 
@@ -120,6 +145,39 @@ public class DashboardServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
+        
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("user") == null) {
+            response.sendRedirect("login.jsp");
+            return;
+        }
+
+        String action = request.getParameter("action");
+        if ("reply".equals(action)) {
+            String id = request.getParameter("id");
+            String replyMessage = request.getParameter("replyMessage");
+            
+            if (id != null && replyMessage != null && !replyMessage.trim().isEmpty()) {
+                Connection conn = null;
+                PreparedStatement ps = null;
+                try {
+                    conn = DBConnection.getConnection();
+                    String sql = "UPDATE inquiries SET reply_message = ?, replied_at = CURRENT_TIMESTAMP WHERE id = ?";
+                    ps = conn.prepareStatement(sql);
+                    ps.setString(1, replyMessage);
+                    ps.setInt(2, Integer.parseInt(id));
+                    ps.executeUpdate();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    if (ps != null) try { ps.close(); } catch (Exception e) {}
+                    if (conn != null) try { conn.close(); } catch (Exception e) {}
+                }
+            }
+            response.sendRedirect("DashboardServlet");
+            return;
+        }
+        
         doGet(request, response);
     }
 }
