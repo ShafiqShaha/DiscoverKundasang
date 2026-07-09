@@ -125,7 +125,7 @@ public class DashboardServlet extends HttpServlet {
             mock4.put("id", "4");
             mock4.put("name", "Raziq Ramli");
             mock4.put("contact_number", "+6012-000-0004");
-            mock4.put("gender", "Prefer not to say");
+            mock4.put("gender", "Male");
             mock4.put("email", "raziq.ramli@gmail.com");
             mock4.put("source", "Newspaper or Magazine");
             mock4.put("message", "Do you offer customizable tour guide packages for groups of 10 people?");
