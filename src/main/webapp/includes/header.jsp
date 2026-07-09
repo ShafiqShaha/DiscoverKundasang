@@ -46,12 +46,11 @@
             height: 100% !important;
             background-color: #111e12 !important; /* Deep forest green */
             z-index: 999999 !important;
-            opacity: 1 !important;
-            visibility: visible !important;
-            transition: opacity 0.4s ease, visibility 0.4s !important;
+            transform: translateY(0) !important;
+            transition: transform 0.5s cubic-bezier(0.85, 0, 0.15, 1), visibility 0.5s !important;
         }
         #page-loader.fade-out {
-            opacity: 0 !important;
+            transform: translateY(-100%) !important;
             visibility: hidden !important;
             pointer-events: none !important;
         }

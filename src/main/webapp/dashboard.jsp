@@ -210,33 +210,19 @@
         color: var(--white) !important;
     }
 
-    /* Style the sorting arrows to be clear, visible, and modern */
+    /* Style the default sorting arrows to match our green theme */
     table.dataTable thead th.sorting::before,
     table.dataTable thead th.sorting_asc::before,
-    table.dataTable thead th.sorting_desc::before {
-        right: 15px !important;
-        content: "▲" !important;
-        font-size: 0.6rem !important;
-        color: #d2e3c8 !important;
-        opacity: 0.25 !important;
-        transition: opacity 0.3s ease;
-    }
+    table.dataTable thead th.sorting_desc::before,
     table.dataTable thead th.sorting::after,
     table.dataTable thead th.sorting_asc::after,
     table.dataTable thead th.sorting_desc::after {
-        right: 15px !important;
-        content: "▼" !important;
-        font-size: 0.6rem !important;
         color: #d2e3c8 !important;
-        opacity: 0.25 !important;
-        transition: opacity 0.3s ease;
+        opacity: 0.35 !important;
     }
-    
-    /* Highlight the active sorting direction */
-    table.dataTable thead th.sorting_asc::before {
-        opacity: 1 !important;
-    }
+    table.dataTable thead th.sorting_asc::before,
     table.dataTable thead th.sorting_desc::after {
+        color: var(--white) !important;
         opacity: 1 !important;
     }
 
@@ -378,10 +364,16 @@
 
     .dataTables_wrapper .dataTables_info,
     .dataTables_wrapper .dataTables_filter,
-    .dataTables_wrapper .dataTables_length {
-        color: #ccd7cc !important;
+    .dataTables_wrapper .dataTables_filter label,
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_length label {
+        color: var(--white) !important;
+        font-weight: 500 !important;
         font-size: 0.9rem !important;
         margin-bottom: 10px;
+    }
+    .dataTables_wrapper .dataTables_info {
+        color: #ccd7cc !important;
     }
 
     .tag {
@@ -517,9 +509,7 @@
                 <i data-feather="list"></i>
                 Visitor Inquiries (Data Table)
             </h3>
-            <span style="font-size: 0.85rem; color: #777;">
-                <%= connectionError != null ? "Offline Fallback Mode" : "Database Live Connected" %>
-            </span>
+
         </div>
 
         <div class="table-container">
