@@ -251,7 +251,7 @@
                 <div class="avatar-wrapper">
                     <img src="img/developer.jpg" alt="Developer Photo" class="avatar-img">
                 </div>
-                <h3>Muhammad Shafiq Bin Shaharuddin</h3>
+                <h3>Shafiq Shaharuddin</h3>
                 <p>Computer Science Student</p>
                 
                 <!-- Student Credentials Area -->
