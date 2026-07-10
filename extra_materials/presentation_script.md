@@ -1,128 +1,99 @@
-# Video Presentation Script: Discover Kundasang 🎙️
-
-Use this script as a word-for-word guide when recording your presentation video. It is structured to satisfy every criterion of the assignment rubric.
-
-* **Target Duration**: ~8-10 Minutes (No time limit)
-* **Formatting Key**:
-  * 🎬 `[ACTION]` = What you should do on screen (clicks, scrolling, typing).
-  * 🗣️ `[SPOKEN]` = The exact words you should speak.
-  * 🎯 `[RUBRIC TRIGGER]` = Explains which grading rubric criteria is being satisfied in this segment.
+# 📽️ Video Presentation Script - Discover Kundasang J2EE Web Application
+**Assignment Title**: Tourism in Malaysia (Individual Assignment - 20%)  
+**Presenter**: Muhammad Shafiq Bin Shaharuddin (Student ID: 2023618226, Class: NBCS2306A)  
 
 ---
 
-### **Segment 1: Introduction & Project Scope (0:00 - 1:00)**
-* **🎬 [ACTION]**: Start the recording with your web browser open directly to the **Developer Profile** page (`http://localhost:8080/discoverkundasang/developer.jsp`) showing your name (Shafiq Shaharuddin), Student ID (2023618226), Class (NBCS2306A), and course credentials clearly on the screen.
-* **🗣️ [SPOKEN]**: 
-  > *"Good day to my lecturer. Today, I am excited to present a live demonstration of my J2EE web application project, **Discover Kundasang**. This system is built using Java Servlets, dynamic JSP pages, and a MySQL database backend.*
-  >
-  > *Instead of slides, I will be conducting a direct, live walkthrough of the functional application and its codebase. As shown on my developer profile page, my name is Shafiq Shaharuddin, student ID 2023618226, class NBCS2306A.*
-  >
-  > *Let's begin by looking at the public portal homepage."*
-* **🎯 [RUBRIC TRIGGER]**: Shows clear objectives, project scope, and professional presentation structure.
+## **Segment 1: Introduction & Project Overview (0:00 - 0:45)**
+* **🎬 [ACTION]**: Open browser at `http://localhost:8080/discoverkundasang/developer.jsp`. Point to your photo and student details.
+* **🗣️ [SPOKEN]**:
+  > *"Good day to my lecturer. Today, I am demonstrating my J2EE Web Application project titled **Discover Kundasang**, a tourist hub in Sabah, Malaysia. This is developed for the Web Front-End Development Individual Assignment.*
+  > 
+  > *As shown on my screen, this is the **Developer Page** which displays my photo, name, student ID, and contact details as required. The application is built using Java Servlets, JSP, JDBC, and a MySQL database backend.*
+  > 
+  > *Let's begin the walkthrough of the public website by navigating to the Homepage."*
 
 ---
 
-### **Segment 2: Public Website Tour & Dynamic Layouts (1:00 - 2:45)**
-* **🎬 [ACTION]**: Open your browser at `http://localhost:8080/discoverkundasang/`. Refresh the page to show the preloader and the clean layout.
+## **Segment 2: Public Website & Gallery Content Tour (0:45 - 2:15)**
+* **🔍 [RUBRIC FOCUS]**: **UI/UX & Navigation (15%)** and **Content & Gallery (15%)**
+* **🎬 [ACTION]**: Click on the **Home** link in the navbar. Refresh the page to show the custom preloader.
 * **🗣️ [SPOKEN]**:
-  > *"Here is the homepage of **Discover Kundasang**. When we load the website, we are greeted by a custom preloader that fades out to reveal the landing section. As we scroll down, we see the 'About Kundasang' section, featuring a fixed background image parallax effect, a dark forest-green overlay, and glassmorphic card details. Let's see this in action as we visit the **Gallery** page."*
-* **🎬 [ACTION]**: Click on the **Gallery** link in the navbar. The page transitions with a smooth fade.
+  > *"Here is the homepage of **Discover Kundasang**. As we load the site, we see a smooth custom preloader animation that fades out to reveal the main landing layout. The interface is styled with a modern forest-green theme, custom typography, and a parallax scroll effect on the main 'Hero' section, meeting the **UI/UX & Navigation** criteria for a responsive, professional UI.*
+  > 
+  > *Next, let's look at the **Gallery Page**."*
+* **🎬 [ACTION]**: Click on **Gallery** in the navbar. Hover over the images to show the caption effects.
 * **🗣️ [SPOKEN]**:
-  > *"In the **Gallery** page, we have exactly **eight high-quality images** representing Kundasang landmarks, styled with hover title effects. Let's check the **Activities** page."*
-* **🎬 [ACTION]**: Click on **Activities** in the navbar.
+  > *"Under the **Content & Gallery** rubric, we are required to have exactly **eight (8) images**. As you can see, I have exactly 8 high-quality images representing Kundasang landmarks, styled with custom glassmorphic hover overlays showing their titles.*
+  > 
+  > *Now, let's move to the **Activities Page**."*
+* **🎬 [ACTION]**: Click on **Activities** in the navbar. Scroll down slowly.
 * **🗣️ [SPOKEN]**:
-  > *"The **Activities** page showcases **four main attractions** using an alternating glassmorphic card layout. Let's visit the **Accommodation** page."*
+  > *"For **Activities**, we are required to showcase exactly **four (4) things to do**. I have set up 4 cards showcasing activities like visiting the Desa Dairy Farm and Mount Kinabalu botanical trails, complete with structured titles, high-resolution images, and balanced text descriptions.*
+  > 
+  > *Let's visit the **Accommodation Page**."*
 * **🎬 [ACTION]**: Click on **Accommodation** in the navbar.
 * **🗣️ [SPOKEN]**:
-  > *"The **Accommodation** page displays **four popular stays**. Instead of dummy booking forms, I updated these buttons to say 'More Info'. Clicking on them takes the user directly to external official booking portals in a new browser tab using the secure `target='_blank'` attribute, ensuring our users get real-time rates."*
-* **🎬 [ACTION]**: Click the **More Info** button for Umea Glam Kundasang to show it opening a new tab, then close it and return to the app. Navigate to the **Developer** page.
+  > *"Similarly, the **Accommodation Page** showcases exactly **four (4) places to stay**. To make this user experience premium, the booking buttons say 'More Info' and redirect the visitor directly to official resort booking portals in a new browser tab using the secure `target='_blank'` attribute, satisfying the **External Link** requirement. Let's see this in action."*
+* **🎬 [ACTION]**: Click the **More Info** button for Umea Glam Kundasang. A new tab opens showing the official booking portal. Close the tab and return.
 * **🗣️ [SPOKEN]**:
-  > *"On the **Developer** page, I have detailed my student profile, course details, and links to my professional profiles. Throughout the entire public site, the navigation bar remains fully consistent and responsive."*
-* **🎯 [RUBRIC TRIGGER]**: Highlights the **UI/UX & Navigation (15%)** and **Content & Gallery (15%)** criteria, specifically proving you met the exact count requirements (8 gallery images, 4 activities, 4 rooms, consistent navbar, and developer page).
+  > *"Notice that as I navigate across all pages, the navigation header remains fully consistent and responsive, proving a seamless user experience."*
 
 ---
 
-### **Segment 3: Database Persistence & Diagnostic Checker (2:45 - 4:15)**
-* **🎬 [ACTION]**: Click on **Contact** page. Scroll down to show the inquiry form.
+## **Segment 3: Visitor Inquiry & Database Persistence (2:15 - 3:45)**
+* **🔍 [RUBRIC FOCUS]**: **Database Persistence (20%)**
+* **🎬 [ACTION]**: Click on the **Contact** page. Scroll down to show the Google Map and the form.
 * **🗣️ [SPOKEN]**:
-  > *"Now let's explore the **Contact** page. It features an embedded interactive Google Map and a button to open Google Maps in a new tab.*
-  >
-  > *Below is the **Visitor Inquiry Form**. We have input fields for Name, Contact Number, Gender, Email, Source Channel, and Message. All fields are compulsory. If I try to submit the form empty, HTML5 validation blocks the request. If I enter temporary data and click the **Clear** button, it resets all input fields instantly. Let's submit a realistic inquiry."*
-* **🎬 [ACTION]**: Fill out the form with actual test data (e.g., Name: `Adam Haris`, Phone: `012-7766554`, Gender: `Male`, Email: `adam@example.com`, Channel: `Friend Recommendation`, Message: `Hi, is it easy to secure a hiking slot for Mount Kinabalu in September?`). Click **Submit**.
-* **🗣️ [SPOKEN]**:
-  > *"Upon clicking **Submit**, the browser sends a POST request to **InquiryServlet**. The servlet establishes a JDBC connection, validates the input, and runs a SQL insert query to save the inquiry into the MySQL database. After saving, the servlet redirects back to the contact page and displays a green success feedback alert."*
-* **🎬 [ACTION]**: Open browser tab at `http://localhost:8080/discoverkundasang/dbTest.jsp`.
-* **🗣️ [SPOKEN]**:
-  > *"To ensure the database setup is secure and robust, I followed industry best practices. Database credentials are kept in a Git-ignored `sql.env` file to protect passwords from being exposed on GitHub.*
-  >
-  > *I also built this **Database Diagnostic Checker** page. It displays the connection status and lists all database tables. If the database is empty, the teacher or user can initialize all required tables and populate mock data with a single click."*
-* **🎯 [RUBRIC TRIGGER]**: Addresses the **Database Persistence (20%)** rubric. Proves form validation, JDBC connection, SQL inserts, user feedback, and security of environment credentials.
-
----
-
-### **Segment 4: Admin Access & Session Protection (4:15 - 5:15)**
-* **🎬 [ACTION]**: Click the **Login** link in the navigation bar.
-* **🗣️ [SPOKEN]**:
-  > *"Now let's examine the administrative portal. The admin dashboard is protected by a session guard. If an unauthorized user attempts to bypass the login screen by typing the servlet URL directly into the address bar..."*
-* **🎬 [ACTION]**: Manually type `http://localhost:8080/discoverkundasang/DashboardServlet` in the address bar and press Enter. It should redirect back to `login.jsp`.
-* **🗣️ [SPOKEN]**:
-  > *"...As you can see, the servlet checks the HTTP Session. Since no user is logged in, it denies access and redirects back to the login page. Let's log in using our credentials: username `admin` and password `admin123`."*
-* **🎬 [ACTION]**: Type `admin` and `admin123` in the login fields, then click **Sign In**.
-* **🗣️ [SPOKEN]**:
-  > *"Upon clicking Sign In, a secure session is initialized, and the page redirects to the administrator dashboard."*
-* **🎯 [RUBRIC TRIGGER]**: Addresses **Security & Sessions (20%)** rubric. Proves strict session tracking, unauthorized URL block, and login verification.
-
----
-
-### **Segment 5: Admin Dashboard, DataTables & Suggestion Center (5:15 - 7:30)**
-* **🎬 [ACTION]**: Show the dashboard. Scroll down to the table.
-* **🗣️ [SPOKEN]**:
-  > *"Welcome to the **Admin Dashboard**. At the top, we have glassmorphic stats cards indicating the total inquiries count and the gender ratio calculated dynamically from the database.*
-  >
-  > *Below the cards is our **Visitor Inquiries Table**. I integrated this table with **jQuery DataTables** for advanced data management. As requested by the usability feedback, the table columns are optimized: Gender, Status, and Action columns are compact, and Date, Contact, and Tag fields are prevented from wrapping awkwardly. The Email column is fully readable.*
-  >
-  > *I also relocated the search input box to the same row as the table header on the right side. When we slide the table horizontally, the search bar remains locked in position. Let's search for the inquiry we just submitted."*
-* **🎬 [ACTION]**: Type `Adam` in the header search input box. Watch the table filter instantly.
-* **🗣️ [SPOKEN]**:
-  > *"As you can see, the table filters instantly. The sorting arrows in the headers are fully functional, and pagination handles multiple rows smoothly.
-  >
-  > *Now, let's look at the **Reply and Suggestion System**. In the table, each row has a status badge:
-  > - Green **Replied** badges indicate we have already sent advice.
-  > - Yellow **Pending** badges indicate new customer questions.
+  > *"Here on the **Contact Page**, we have an interactive embedded Google Map. Below it is the **Visitor Inquiry Form**, which contains all required fields: Name, Contact Number, Gender, Email Address, the 'How did you know about us?' dropdown list, and a Message text area.*
   > 
-  > *For the record we just searched, the status is **Pending**. I will click the **Reply** button."*
-* **🎬 [ACTION]**: Click the **Reply** button next to Adam Haris's record. The reply modal pops up.
+  > *To address the **Validation** requirement, all fields are set to compulsory. If I try to submit an empty form, HTML5 validation blocks it immediately. If I type some garbage text and click the **Clear** button, the form is instantly reset and emptied, fulfilling the Form Reset requirement.*
+  > 
+  > *Let's submit a realistic inquiry to test our JDBC connection."*
+* **🎬 [ACTION]**: Fill out the form with mock data (e.g. Name: `Adam Haris`, Phone: `+6012-000-0040`, Gender: `Male`, Email: `adam@gmail.com`, Source: `Social Media`, Message: `Hi, do we need to book Desa Dairy Farm entrance tickets online beforehand?`). Click **Submit**.
 * **🗣️ [SPOKEN]**:
-  > *"This launches a custom glassmorphic modal containing the visitor's details and message. I will type our official suggestions in the text area."*
-* **🎬 [ACTION]**: Type a short reply (e.g., `Hello Adam, yes! Hiking slots are limited. We suggest booking at least 3-6 months in advance through Sutera Sanctuary Operators.`). Click **Save Suggestion**.
+  > *"Upon clicking **Submit**, the form issues a POST request to our Java Servlet, `InquiryServlet`. The Servlet establishes a secure **JDBC connection**, parses the form inputs, and saves them into the MySQL `inquiries` table. The Servlet then redirects back to the contact page, showing a green alert box reading 'Inquiry Sent Successfully!' for immediate user feedback.*
+  > 
+  > *Let's verify this on the **Database Diagnostic Checker** page."*
+* **🎬 [ACTION]**: Open browser at `http://localhost:8080/discoverkundasang/dbTest.jsp`.
 * **🗣️ [SPOKEN]**:
-  > *"When I click Save Suggestion, the form submits a POST request directly to our J2EE controller, **DashboardServlet**. The servlet processes the form data and updates the inquiry row in MySQL with our reply text and a timestamp.*
-  >
-  > *Upon successful update, the page redirects back to the dashboard, and as you can see, Adam's status has now transitioned to a green **Replied** badge. The system now replaces the reply button with a **View** button."*
-* **🎬 [ACTION]**: Click the **View** button on Adam Haris's row. The read-only view modal pops up.
+  > *"I built this Diagnostic Checker page to show the database status. As you can see, the JDBC connection status is green, and it displays our table structure. The database connection parameters are kept inside a secure `sql.env` file, which is Git-ignored, protecting credentials from being exposed on GitHub."*
+
+---
+
+## **Segment 4: Admin Access & Session Security (3:45 - 4:45)**
+* **🔍 [RUBRIC FOCUS]**: **Security & Sessions (20%)**
+* **🎬 [ACTION]**: Copy the URL `http://localhost:8080/discoverkundasang/DashboardServlet`. Logout first if already logged in. Open a new private browser window or tab, paste the URL, and press enter.
 * **🗣️ [SPOKEN]**:
-  > *"...it opens a read-only modal displaying our saved suggestion and the exact reply timestamp. Let's log out to securely end our session."*
+  > *"Under the **Security & Sessions** rubric, the Admin Dashboard must be fully protected. If an unauthorized user tries to bypass the login screen by pasting the Servlet URL directly into the address bar, the system's `HttpSession` check detects it instantly and redirects them back to the login screen.*
+  > 
+  > *Let's test logging in with invalid credentials first."*
+* **🎬 [ACTION]**: Go to the login page `http://localhost:8080/discoverkundasang/login.jsp`. Enter username `admin` and password `wrongpassword`. Click **Login**.
+* **🗣️ [SPOKEN]**:
+  > *"Entering incorrect credentials displays a red error warning alert. Let's log in using the correct credentials: username `admin` and password `admin123`."*
+* **🎬 [ACTION]**: Type `admin` and `admin123`. Click **Login**.
+* **🗣️ [SPOKEN]**:
+  > *"Now that we are authenticated, a secure session is bound to the server, and we are redirected to the Admin Dashboard."*
+
+---
+
+## **Segment 5: Admin Dashboard & jQuery DataTable (4:45 - 6:00)**
+* **🔍 [RUBRIC FOCUS]**: **Admin Dashboard (20%)** and **Organization & Video (10%)**
+* **🎬 [ACTION]**: Point to the dashboard header showing the inquiry metrics and total records (39 inquiries).
+* **🗣️ [SPOKEN]**:
+  > *"Our **Admin Dashboard** maps to the **Admin Dashboard (20%)** rubric. It displays all customer inquiries. To fulfill the database count request, I have seeded **39 realistic inquiries** in the database using diverse email domains.*
+  > 
+  > *The data is rendered using the **jQuery DataTables** plugin, which supports advanced sorting by clicking headers, instant search filtering, and pagination controls at the bottom. Let's search for Gmail users by typing 'gmail.com' in the search bar."*
+* **🎬 [ACTION]**: Type `gmail.com` in the search bar. Show that only Gmail accounts remain. Clear the search.
+* **🗣️ [SPOKEN]**:
+  > *"We can also reply to customer questions directly from this dashboard. Let's click the **View/Reply** action button on Adam Haris's inquiry."*
+* **🎬 [ACTION]**: Click the **View/Reply** button on the row for Adam Haris. Type: `Yes, entrance tickets should be purchased online at least 1 day in advance.` and click **Save Suggestion**.
+* **🗣️ [SPOKEN]**:
+  > *"This opens a custom dialog box. Clicking **Save Suggestion** executes an update statement in MySQL via a POST request to the dashboard servlet, updating the record status locally. No external email redirection is triggered, keeping the user inside the web application.*
+  > 
+  > *Finally, let's log out."*
 * **🎬 [ACTION]**: Click the **Logout** button.
 * **🗣️ [SPOKEN]**:
-  > *"Logging out invalidates the session, locking the servlet routes again."*
-* **🎯 [RUBRIC TRIGGER]**: Highlights **Admin Dashboard (20%)** and **Security & Sessions (20%)**. Proves advanced DataTable custom styling, interactive modal dialog flows, and status state persistence.
-
----
-
-### **Segment 6: Database Migrations & Codebase Structure (7:30 - 8:30)**
-* **🎬 [ACTION]**: Open your IDE or project file browser showing the files directory.
-* **🗣️ [SPOKEN]**:
-  > *"For maximum deployment compatibility, I implemented a J2EE **Auto-Migration script** inside the servlet. If the dashboard is loaded on a new database that does not have the reply columns, the servlet automatically detects this and updates the schema on the fly. This ensures the application works out-of-the-box for grading.
-  >
-  > *The codebase is organized cleanly. In the root, we have our `pom.xml` configuration, the `database.sql` setup file, and local deployment script helpers. All presentation plans and scripts have been moved to the `extra_materials` folder so the root folder remains tidy for final submission."*
-* **🎯 [RUBRIC TRIGGER]**: Proves codebase organization, version control friendliness, and deployment stability.
-
----
-
-### **Segment 7: Conclusion (8:30 - END)**
-* **🎬 [ACTION]**: Show the homepage one last time.
-* **🗣️ [SPOKEN]**:
-  > *"In summary, the Discover Kundasang web portal integrates robust front-end layouts with persistent background audio, reliable Servlet-based controllers, secure database queries, and a highly interactive admin panel.
-  >
-  > *That concludes my system presentation. Thank you very much."*
-* **🎯 [RUBRIC TRIGGER]**: Summarizes deliverables and wraps up the presentation professionally.
+  > *"Clicking **Logout** immediately invalidates the current `HttpSession` on the server and redirects us back to the homepage. If I try to press the browser back button, the dashboard cannot be accessed because the session is completely destroyed.*
+  > 
+  > *This concludes the live demo. As you can see, every criterion in the rubric has been met with professional UI, robust database logic, secure sessions, and organized packaging. Thank you."*

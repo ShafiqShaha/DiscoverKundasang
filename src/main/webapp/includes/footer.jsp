@@ -41,7 +41,7 @@
         <p>
 
             Created by
-            <strong>Shafiq Shaha</strong>
+            <strong>Muhammad Shafiq Bin Shaharuddin</strong>
 
             | &copy; 2026
 

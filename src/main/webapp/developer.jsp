@@ -251,11 +251,12 @@
                 <div class="avatar-wrapper">
                     <img src="img/developer.jpg" alt="Developer Photo" class="avatar-img">
                 </div>
-                <h3>Shafiq Shaharuddin</h3>
+                <h3>Muhammad Shafiq Bin Shaharuddin</h3>
                 <p>Computer Science Student</p>
                 
                 <!-- Student Credentials Area -->
                 <div class="student-badge-info">
+                    <div><strong>Student Name:</strong> Muhammad Shafiq Bin Shaharuddin</div>
                     <div><strong>Student ID:</strong> 2023618226</div>
                     <div><strong>Course:</strong> CSC230 (Computer Science)</div>
                     <div><strong>Class:</strong> NBCS2306A</div>
